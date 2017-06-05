@@ -13,7 +13,7 @@ Page({
       return { 
         title: '51明星图',
         desc: '帅锅美女明星一网打尽，快来看看吧。', 
-        path: '/page/index/index' 
+        path: 'pages/index/index' 
       }
     },
     onLoad:function(options){
@@ -33,7 +33,7 @@ Page({
                   title:ret['title'],
               })
               var imgList = ret['data']['imgList'];
-              console.log("imgList: " + JSON.stringify(imgList));
+              // console.log("imgList: " + JSON.stringify(imgList));
               var imgObjList = [];
               imgList.forEach(function(item,index){
                 imgObjList.push({
@@ -42,7 +42,7 @@ Page({
                       h:375
                 })
               })
-              console.log("imgObjList: " + JSON.stringify(imgObjList));
+              // console.log("imgObjList: " + JSON.stringify(imgObjList));
               that.setData({
                 album:imgObjList,
                 albumUrlList:imgList,
@@ -54,7 +54,7 @@ Page({
             }
           },
           fail: function() {
-            console.log('跳转到news页面失败') //fail
+            // console.log('跳转到news页面失败') //fail
           },
           complete:function(){
             setTimeout(function(){
@@ -91,15 +91,15 @@ Page({
         success:function(res){
           if(res.tapIndex == 0){
             var imageSrc = e.currentTarget.dataset.src
-            console.log(imageSrc)
+            // console.log(imageSrc)
             wx.downloadFile({
               url: imageSrc, 
                     success: function(res) {
-                      console.log(res)
+                      // console.log(res)
                         wx.saveFile({
                           tempFilePath: res.tempFilePath,
                           success: function(res){
-                            console.log(res.savedFilePath)
+                            // console.log(res.savedFilePath)
                             dialog.toast("保存成功")
                           },
                           fail: function(e) {

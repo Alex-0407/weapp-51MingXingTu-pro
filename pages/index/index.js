@@ -23,7 +23,7 @@ Page({
     return { 
       title: '51明星图',
       desc: '帅锅美女明星一网打尽，快来看看吧。', 
-      path: '/page/index/index' 
+      path: 'pages/index/index' 
     }
   },
   handlerStart(e) {
@@ -87,13 +87,13 @@ Page({
     }
     stv.tStart = false;
     this.setData({stv: this.data.stv});
-    console.log("this.data.index: " + this.data.index);
-    console.log("activeTab: " + activeTab);
+    // console.log("this.data.index: " + this.data.index);
+    // console.log("activeTab: " + activeTab);
     this.changeType(activeTab);
   },
   //点击某一个title条
   changeType:function(activeTab){
-    console.log("changeType activeTab: " + activeTab);
+    // console.log("changeType activeTab: " + activeTab);
     var type = "";
     if(activeTab === 0){
       type = "nv";
@@ -199,27 +199,26 @@ Page({
     })
   },
   gotoAlbum:function(e){
-    console.log("gotoAlbum");
+    // console.log("gotoAlbum");
     let param = e.currentTarget.dataset, 
     index = param.id.lastIndexOf("\/"),
     title = param.title,
-    // id=param.id.replace(/[^0-9]/ig,"")
     id = param.id.substring(index + 1, param.id.length).replace(/[^0-9]/ig,"");
-    console.log("param: " + param);
-    console.log("title: " + title);
-    console.log("id: " + id);
+    // console.log("param: " + param);
+    // console.log("title: " + title);
+    // console.log("id: " + id);
     var url = "../album/album?title="+title+"&id="+id;
-    console.log("ready");
+    // console.log("ready");
     wx.navigateTo({
       url:url,
       success: function(res){
-        console.log('跳转到album页面成功')// success
+        // console.log('跳转到album页面成功')// success
       },
       fail: function() {
-      console.log('跳转到album页面失败')  // fail
+      // console.log('跳转到album页面失败')  // fail
       },
       complete: function() {
-        console.log('跳转到album页面完成') // complete
+        // console.log('跳转到album页面完成') // complete
       }
     })
   }

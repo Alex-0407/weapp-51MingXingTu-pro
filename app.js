@@ -28,7 +28,7 @@ App({
     }
   },
   getTypes:function(){
-    console.log("getTypes: ");
+    // console.log("getTypes: ");
     dialog.loading()
         var that = this
         //请求数据

@@ -28,20 +28,20 @@
   color: #666666;
 }
 .stv-container .tab-bar .tab-active {
-  color: #2d80ff;
+  color: #FF88C2;
 }
 .stv-container .tab-bar .tab {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 16rpx;
-  padding-bottom: 20rpx;
+  padding-bottom: 16rpx;
 }
 .stv-container .tab-bar .under-line {
   position: absolute;
   bottom: 0;
   height: 6rpx;
-  background-color: #2d80ff;
+  background-color: #FF88C2;
 }
 .stv-container .scroll-view {
   position: relative;
@@ -73,8 +73,8 @@
     height: 30px;
 }
 .content{
-    margin: 20rpx 0 0 0;
-    padding: 20rpx;
+    margin: 4rpx 0 0 0;
+    padding: 10rpx;
     display: flex;
     justify-content: space-between;
     flex-wrap:wrap;
