@@ -7,15 +7,19 @@ Page({
         title:'',
         id:'',
         countShow:true,
-        currentIndex:1
+        currentIndex:1,
+      imageUrl: '',
+      imageUrls: ['https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=463882794,1348260465&fm=26&gp=0.jpg', 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1125678520,932208071&fm=26&gp=0.jpg', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3932673481,3866679581&fm=26&gp=0.jpg', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3143497914,3783741282&fm=26&gp=0.jpg', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1087822958,2728090746&fm=26&gp=0.jpg', 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4171337231,231636153&fm=26&gp=0.jpg',  'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2990725208,76145519&fm=26&gp=0.jpg']
     },
-    onShareAppMessage: function () {
-      return { 
-        title: '51明星图',
-        desc: '帅锅美女明星一网打尽，快来看看吧。', 
-        path: 'pages/index/index' 
-      }
-    },
+  onShareAppMessage: function () {
+    this.imageUrl = this.data.imageUrls[Math.floor(Math.random() * this.data.imageUrls.length)];
+    return {
+      title: '快来看看你们最爱的男神女神吧！',
+      // desc: '明星云集之地，就等你来了！',
+      path: '/pages/index/index',
+      imageUrl: this.imageUrl
+    }
+  },
     onLoad:function(options){
         this.setData({
             title:options.title,

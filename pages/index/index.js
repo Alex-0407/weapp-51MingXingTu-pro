@@ -17,14 +17,10 @@ Page({
       offset: 0,
       tStart: false
     },
-    activeTab: 0
-  },
-  onShareAppMessage: function () {
-    return { 
-      title: '51明星图',
-      desc: '帅锅美女明星一网打尽，快来看看吧。', 
-      path: 'pages/index/index' 
-    }
+    activeTab: 0,
+     imageUrl: '',
+     imageUrls: ['https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=391167782,838308822&fm=26&gp=0.jpg', 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2564795204,2712048867&fm=26&gp=0.jpg', 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=4018897402,2736635400&fm=11&gp=0.jpg', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3143497914,3783741282&fm=26&gp=0.jpg', 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1087822958,2728090746&fm=26&gp=0.jpg', 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=4171337231,231636153&fm=26&gp=0.jpg',
+'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2203169849,2952576476&fm=26&gp=0.jpg',     'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=463882794,1348260465&fm=26&gp=0.jpg', 'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1125678520,932208071&fm=26&gp=0.jpg']
   },
   handlerStart(e) {
     let {clientX, clientY} = e.touches[0];
@@ -221,5 +217,14 @@ Page({
         // console.log('跳转到album页面完成') // complete
       }
     })
+  },
+  onShareAppMessage: function () {
+    this.imageUrl = this.data.imageUrls[Math.floor(Math.random() * this.data.imageUrls.length)];
+    return {
+      title: '快来看看你们最爱的男神女神吧！',
+      // desc: '明星云集之地，就等你来了！',
+      path: '/pages/index/index',
+      imageUrl: this.imageUrl
+    }
   }
 })
